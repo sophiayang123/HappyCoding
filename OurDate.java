@@ -1,0 +1,71 @@
+import java.util.Calendar;
+public class OurDate {
+	private static Calendar calendar = Calendar.getInstance(); 
+	private int day;
+	private int month;
+	private int year;
+	
+	public OurDate() {
+		this(calendar.get(Calendar.DATE));
+	}
+	public OurDate(int day) {
+		this(day,calendar.get(Calendar.MONTH));
+	} 
+	public OurDate(int day, int month) {
+		this(day,month,calendar.get(Calendar.YEAR));
+	}
+	public OurDate(int day, int month, int year) {		
+		this.setYear(year); 
+		this.setMonth(month);
+		this.setDay(day);
+	}
+	
+	public int getDay() {	
+		return day;
+	}
+	private void setDay(int day) { 
+		if (day < 1 || day> calendar.getActualMaximum(Calendar.DAY_OF_MONTH)) {
+			throw new IllegalArgumentException("Invalid day ");
+		}else
+			this.day=day;
+	}
+	public int getMonth() {
+		 return month;
+	}
+	private void setMonth(int month) {
+		if (month < 0 || month>12) {
+			throw new IllegalArgumentException("Invalid month ");
+		}else
+			this.month=month;
+	}
+	public int getYear() {
+		return year;
+	}
+	private void setYear(int year) {
+		if (year < 0 || year> calendar.get(Calendar.YEAR)) {
+			throw new IllegalArgumentException("Invalid year");
+		}else
+			this.year=year;
+	}
+	
+	@Override
+	public String toString() {
+		return day+"/"+month+"/"+year;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(this.getClass()!=obj.getClass()) {
+			return false;
+		}else {
+		OurDate OD = (OurDate) obj;
+		return ( this.day == OD.day && this.month == OD.month && this.year == OD.year);
+		}
+	}
+}
+	
+
+	
+	
+	
+
