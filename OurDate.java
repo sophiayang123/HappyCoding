@@ -6,14 +6,14 @@ public class OurDate {
 	private int year;
 	
 	public OurDate() {
-		this(calendar.get(Calendar.DATE));
+		this(calendar.get(Calendar.DATE), calendar.get(Calendar.MONTH), calendar.get(Calendar.YEAR));
 	}
-	public OurDate(int day) {
-		this(day,calendar.get(Calendar.MONTH));
-	} 
-	public OurDate(int day, int month) {
-		this(day,month,calendar.get(Calendar.YEAR));
-	}
+//	public OurDate(int day) {
+//		this(day,calendar.get(Calendar.MONTH));
+//	} 
+//	public OurDate(int day, int month) {
+//		this(day,month,calendar.get(Calendar.YEAR));
+//	}
 	public OurDate(int day, int month, int year) {		
 		this.setYear(year); 
 		this.setMonth(month);
@@ -50,7 +50,7 @@ public class OurDate {
 	
 	@Override
 	public String toString() {
-		return day+"/"+month+"/"+year;
+		return String.format("%d/%d/%d", day,month,year);
 	}
 	
 	@Override

@@ -5,22 +5,24 @@ public class Employee {
 	private OurDate startDate;
 	
 	public Employee() {
-		this("unknow");			
+		this("unknow",-9, new OurDate(),-1);			
 	}
-	public Employee(String name) {
-		this(name,-9);
-	}
-	public Employee(String name, int employeeNumber) {
-		this(name,employeeNumber,new OurDate());
-	}
-	public Employee(String name, int employeeNumber,OurDate startDate) {
-		this(name,employeeNumber,startDate, -1);
-	}
+	
+//	public Employee(String name) {
+//		this(name,-9);
+//	}
+//	public Employee(String name, int employeeNumber) {
+//		this(name,employeeNumber,new OurDate());
+//	}
+//	public Employee(String name, int employeeNumber,OurDate startDate) {
+//		this(name,employeeNumber,startDate, -1);
+//	}
+	
 	public Employee(String name, int employeeNumber, OurDate startDate, double salary) {
-		this.setName(name);
-		this.setEmployeeNumber(employeeNumber);
-		this.setStartDate(startDate);
-		this.setSalary(salary);
+		setName(name);
+		setEmployeeNumber(employeeNumber);
+		setStartDate(startDate);
+		setSalary(salary);
 	}
 	
 	public String getName() {
@@ -49,9 +51,8 @@ public class Employee {
 	}
 	
 	private void setStartDate(OurDate startDate) {
-		this.startDate.getDay();
-		this.startDate.getMonth();
-		this.startDate.getYear();
+//		startDate = new OurDate();
+		this.startDate = startDate;
 	}
 	
 	private void setSalary(double salary) {	
@@ -63,7 +64,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return name + "/t/t" + employeeNumber + "/t/t" + getStartDate() + "/t/t" + getSalary();
+		return String.format("%-20s20%d20%s20%d",name,employeeNumber,startDate,salary);
 	}
 	
 	@Override

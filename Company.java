@@ -11,7 +11,9 @@ public class Company {
 	}
 	
 	public void addEmployee(String name, int employeeNumber, OurDate startDate, double salary) {
-
+		if(!isMaximumEmployees()) {
+			employee[currentNumberEmployees()] = new Employee(name,employeeNumber,startDate,salary);
+		}
 	}
 	
 	public int currentNumberEmployees() {
@@ -30,10 +32,16 @@ public class Company {
 	}
 	
 	public Employee[] getEmployees() {
-		
+		return employee;
 	}
 	
-	public Employee findSeniorEmployee() {
-
-	}
+//	public Employee findSeniorEmployee() {
+//		Employee ep = employee[0];
+//		for(int i=0; i< currentNumberEmployees(); i++) {
+//			if(ep.getStartDate() ) {
+//				
+//			}
+//		}
+//	}
+	
 }
