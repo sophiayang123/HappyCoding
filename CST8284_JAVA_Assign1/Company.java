@@ -1,6 +1,8 @@
+package Employee_info;
 /*
 Represents an abstraction of a Company
 */
+import java.util.Calendar;
 public class Company {
 	private Employee[] employee;
 	private static int numberEmployees;
@@ -25,7 +27,7 @@ public class Company {
 	}
 	
 	public boolean isMaximumEmployees() {
-		if(numberEmployees> maxnumEmployees) 
+		if(currentNumberEmployees() < maxnumEmployees) 
 			return false;
 		else
 			return true;
@@ -35,13 +37,26 @@ public class Company {
 		return employee;
 	}
 	
-//	public Employee findSeniorEmployee() {
-//		Employee ep = employee[0];
-//		for(int i=0; i< currentNumberEmployees(); i++) {
-//			if(ep.getStartDate() ) {
-//				
-//			}
-//		}
-//	}
+	public Employee findSeniorEmployee() {
+		Employee seniorEmployee = new Employee();
+		Calendar seniorEmployeeDate = Calendar.getInstance();
+		seniorEmployeeDate.set(seniorEmployee.getStartDate().getDay(), 
+							seniorEmployee.getStartDate().getMonth(),
+							seniorEmployee.getStartDate().getYear());
+		
+		for(int i=0; i< currentNumberEmployees(); i++) {
+			Calendar employeeDate = Calendar.getInstance();
+			employeeDate.set(employee[i].getStartDate().getDay(), 
+							employee[i].getStartDate().getMonth(),
+							employee[i].getStartDate().getYear() );
+			
+			if(seniorEmployeeDate.after(employeeDate)) {
+				seniorEmployee = employee[i];
+				
+			}
+		}
+		
+		return seniorEmployee;
+	}
 	
 }

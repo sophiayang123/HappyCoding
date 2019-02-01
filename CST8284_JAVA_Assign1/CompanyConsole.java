@@ -1,3 +1,4 @@
+package Employee_info;
 import java.util.Scanner;
 public class CompanyConsole {
 	private static final int addEmployee =1;
