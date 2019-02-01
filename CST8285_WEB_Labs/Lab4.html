@@ -32,6 +32,7 @@
 				border-width: 1px;
 				border-style: solid;
 				padding: 2px;
+				font-weight: bold;
 			}
 			.center{
 				text-align: center;
@@ -39,11 +40,13 @@
 			.required{
 				font-color: #FF0000;
 			}
-			#content{
+			#content p{
 				padding-left: 10px;
 			}
-			footer p {
+			footer{
 				margin: 10px;
+			}
+			footer p {
 				font-size: 10pt;
 				text-align: center;				
 			}
@@ -101,7 +104,8 @@
 				<tr>
 					<td>Province:</td>
 					<td>
-						<select>   
+						<select>
+							<option selected disabled>Select a province</option>
 							<option value="BC">British Columbia</option>
 							<option value="AB">Alberta</option>
 							<option value="SK">Saskatchewan</option>
@@ -120,9 +124,25 @@
 				</tr>
 				</required>
 				<!-- * Postal Code | textbox, maximum length of 6 characters -->
+				<tr>
+					<td>Postal code:</td>
+					<td><input type = "text" name = "postalCode" maxlength="10" size="40"></td>
+				</tr>
 				<!-- * Email address | textbox -->
+				<tr>
+					<td>Email address:</td>
+					<td><input type = "text" name = "emailAddress" size="40"></td>
+				</tr>
 				<!-- * Home phone | textbox -->
+				<tr>
+					<td>Home phone:</td>
+					<td><input type = "text" name = "homePhone" size="40"></td>
+				</tr>
 				<!-- Work phone | textbox -->
+				<tr>
+					<td>Work phone:</td>
+					<td><input type = "text" name = "workPhone" size="40"></td>
+				</tr>
 			</table>		
 			</fieldset>
 			<fieldset>
@@ -139,8 +159,16 @@
 					 Also, please review the lab instructions regarding the placement of credit card icon images beside
 					 each radio button. 
 				-->
+				<tr>
+					<td>Credit Card Type:</td>
+					<td><input type = "radio" name = "creditCard" id="creditCardVisa" value = "VISA"></td>
+					<td><input type = "radio" name = "creditCard" id="creditCardAmex" value = "MasterCard"></td>
+					<td><input type = "radio" name = "creditCard" id="creditCardMasterCard" value = "AMEX"></td>
+				</tr>
 				<!-- Credit Card Number | textbox -->
+
 				<!-- Expiry Date | textbox, maximum 5 characters (MM/YY) -->
+				
 			</fieldset>
 			<fieldset>
 				<legend>Agree and Submit</legend>
