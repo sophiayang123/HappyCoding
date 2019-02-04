@@ -1,4 +1,4 @@
-package Employee_info;
+//package Employee_info;
 import java.util.Scanner;
 public class CompanyConsole {
 	private static final int addEmployee =1;
@@ -13,7 +13,8 @@ public class CompanyConsole {
 	}
 	
 	public static void main(String[] args) {
-		CompanyConsole cc = new CompanyConsole();		
+		CompanyConsole cc = new CompanyConsole();
+		cc.startUp = new Company();
 		cc.meun();
 		int n = cc.in.nextInt();
 		while(n!=exit) {
@@ -45,8 +46,7 @@ public class CompanyConsole {
 	}
 	
 	private void addEmployee() {
-		startUp = new Company();
-		//in = new Scanner(System.in);
+
 		System.out.printf("%s%n%s","ENTER NEW EMPLOYEE INFORMATION:","NAME:");
 			String na = in.next();		
 			System.out.print("EMPLOYEE NUMBER:");
@@ -67,7 +67,7 @@ public class CompanyConsole {
 	private void displayEmployees() {
 		System.out.printf("%-20s%-20s%-20s%-20s%n","NAME", "EMPLOYEE NO.", "START DATE", "SALARY");
 		for(int i=0; i<startUp.currentNumberEmployees() ;i++) {
-			System.out.println(startUp.getEmployees()[i]);
+			System.out.print(startUp.getEmployees()[i]);
 		}
 		
 	}

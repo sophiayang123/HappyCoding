@@ -1,10 +1,10 @@
-package Employee_info;
+//package Employee_info;
 public class Employee {
 	private String name;
 	private int employeeNumber;
 	private double salary;
 	private OurDate startDate;
-	public Object startUp;
+//	public Object startUp;
 	
 	public Employee() {
 		this("unknow",-9, new OurDate(),-1);			
@@ -67,7 +67,7 @@ public class Employee {
 	@Override
 	public String toString() {
 //		return name+"\t\t\t"+employeeNumber+"\t\t\t"+startDate+"\t\t\t"+salary;
-		return String.format("%-20s%-20d%-20s%-20f%n",name, employeeNumber,startDate, salary);
+		return String.format("%-20s%-20d%-20s%-20.2f%n",name, employeeNumber,startDate, salary);
 	}
 	
 	@Override
@@ -83,7 +83,6 @@ public class Employee {
 		}
 		Employee otherEp = (Employee) obj;
 		return this.getName().equals(otherEp.getName()) && this.getEmployeeNumber() == otherEp.getEmployeeNumber() && this.getStartDate().equals(otherEp.getStartDate() );
-
 		//		if(this==null) {
 //			return false;
 //		}
