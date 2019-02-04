@@ -1,0 +1,49 @@
+package assign1test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import assign1.Employee;
+
+class TestEmployee {
+	Employee ep = new Employee();
+	
+	@BeforeAll
+	public static void setUpBeforeAllTests() {
+		System.out.println("Starting tests......");
+	}
+	@BeforeEach
+	public void setUpBeforeEachTest() {
+		System.out.println("Before tests");
+	}
+	@AfterAll
+	public static void tearDownAfterAllTests() {
+		System.out.println("Finishing tests......");
+	}
+	@AfterEach
+	public void tearDownAfterEachTest() {
+		System.out.println("After tests......");
+	}
+	@Test
+	public void testEmployeeEquals() {
+		assertEquals(ep.equals(ep) == true, false);
+	}
+	@Test
+	public void testEmployeeNotEquals() {
+		assertEquals(!ep.equals(ep) == false, true);
+	}
+	@Test
+	public void testDefaultOurDateConstructor() {
+		
+	}
+	@Test
+	public void testOverloadedOurDateConstructor() {
+		
+	}
+
+}
