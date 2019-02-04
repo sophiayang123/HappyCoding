@@ -1,0 +1,50 @@
+		/* <style> */
+			table{
+				margin: 5px;
+				padding: 5px;
+			}
+			td{
+				padding: 3px;
+			}
+	
+			#wrapper{
+				background-color: #FFBF40;
+				margin-top: 20px;
+				border: solid black;
+				padding-top: 10px;
+				border-width: 1px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 900px;
+			}
+			fieldset{
+				background-color: #FFD073;
+				margin-top: 5px;
+			}
+			fieldset legend{
+				background-color: #FFD073;
+				color : #412C84;	
+				border-color: #200772;
+				border-width: 1px;
+				border-style: solid;
+				padding: 2px;
+				font-weight: bold;
+			}
+			.center{
+				text-align: center;
+			}
+			.required{
+				color: #FF0000;
+			}
+			#content p{
+				padding-left: 10px;
+			}
+			footer{
+				margin: 10px;
+			}
+			footer p {
+				font-size: 10pt;
+				text-align: center;				
+            }
+            
+		/* </style> */

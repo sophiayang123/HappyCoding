@@ -1,4 +1,4 @@
-package Employee_info;
+//package Employee_info;
 /*
 Represents an abstraction of a Company
 */
@@ -14,7 +14,7 @@ public class Company {
 	
 	public void addEmployee(String name, int employeeNumber, OurDate startDate, double salary) {		
 		  if(!isMaximumEmployees()) {
-			  employee[currentNumberEmployees()] = new Employee(name,employeeNumber,startDate,salary); 
+			  employee[numberEmployees] = new Employee(name,employeeNumber,startDate,salary); 
 			  numberEmployees++; 
 			  }		 
 		
