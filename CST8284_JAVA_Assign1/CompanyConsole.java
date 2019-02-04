@@ -13,16 +13,17 @@ public class CompanyConsole {
 	}
 	
 	public static void main(String[] args) {
-		CompanyConsole cc = new CompanyConsole();	
+		CompanyConsole cc = new CompanyConsole();		
 		cc.meun();
 		int n = cc.in.nextInt();
 		while(n!=exit) {
 			if(n==addEmployee) {
 				cc.addEmployee(); 
+//				System.out.print(cc.startUp.currentNumberEmployees());				
 			}else if(n== displayEmployees){
 				cc.displayEmployees();
 			}else if(n==displaySeniorEmployee) {
-				
+				cc.displaySeniorEmployee();
 			}
 			cc.meun();
 			n = cc.in.nextInt();
@@ -64,16 +65,16 @@ public class CompanyConsole {
 	}
 	
 	private void displayEmployees() {
-		System.out.printf("%-20s%20s%20s%20s%n","NAME", "EMPLOYEE NO.", "START DATE", "SALARY");
-//		System.out.printf("%s%n",startUp.getEmployees());
-		for(int i=0; i< startUp.currentNumberEmployees();i++) {
+		System.out.printf("%-20s%-20s%-20s%-20s%n","NAME", "EMPLOYEE NO.", "START DATE", "SALARY");
+		for(int i=0; i<startUp.currentNumberEmployees() ;i++) {
 			System.out.println(startUp.getEmployees()[i]);
 		}
 		
 	}
 	
 	private void displaySeniorEmployee() {
-		
+		System.out.printf("%-20s%-20s%-20s%-20s%n","NAME", "EMPLOYEE NO.", "START DATE", "SALARY");
+		System.out.println(startUp.findSeniorEmployee() );
 	}
 	
 

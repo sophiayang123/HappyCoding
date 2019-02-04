@@ -1,3 +1,4 @@
+package Employee_info;
 import java.util.Calendar;
 public class OurDate {
 	private static Calendar calendar = Calendar.getInstance(); 
@@ -6,7 +7,7 @@ public class OurDate {
 	private int year;
 	
 	public OurDate() {
-		this(calendar.get(Calendar.DATE), calendar.get(Calendar.MONTH), calendar.get(Calendar.YEAR));
+		this(calendar.get(Calendar.DATE), calendar.get(Calendar.MONTH+1), calendar.get(Calendar.YEAR));
 	}
 //	public OurDate(int day) {
 //		this(day,calendar.get(Calendar.MONTH));
@@ -55,13 +56,27 @@ public class OurDate {
 	
 	@Override
 	public boolean equals(Object obj) {
+		if(this==obj)  {
+			return true;
+		}
+//		dead code????
+//		if(this==null) {
+//			return false;
+//		}
+		if(obj == null) {
+			return false;
+		}	
 		if(this.getClass()!=obj.getClass()) {
 			return false;
-		}else {
-		OurDate OD = (OurDate) obj;
-		return ( this.day == OD.day && this.month == OD.month && this.year == OD.year);
 		}
+		OurDate other = (OurDate) obj;
+		
+		return this.getDay()== other.getDay() && this.getMonth() == other.getMonth() && this.getYear() == other.getYear();
+			
 	}
+		
+		
+	
 }
 	
 

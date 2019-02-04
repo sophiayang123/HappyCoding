@@ -12,17 +12,25 @@ public class Company {
 		employee = new Employee[10];
 	}
 	
-	public void addEmployee(String name, int employeeNumber, OurDate startDate, double salary) {
-		if(!isMaximumEmployees()) {
-			employee[currentNumberEmployees()] = new Employee(name,employeeNumber,startDate,salary);
-		}
+	public void addEmployee(String name, int employeeNumber, OurDate startDate, double salary) {		
+		  if(!isMaximumEmployees()) {
+			  employee[currentNumberEmployees()] = new Employee(name,employeeNumber,startDate,salary); 
+			  numberEmployees++; 
+			  }		 
+		
+		/*
+		 * for(int i=0; i< employee.length; i++) { if(employee[i]!=null)
+		 * numberEmployees++; }
+		 */
 	}
 	
 	public int currentNumberEmployees() {
-		for(int i=0; i< employee.length; i++) {
-			if(employee[i]!=null)
-				numberEmployees++;
-		} 
+//		int currentEmployees = 0;
+//		 for(int i=0; i< employee.length; i++) { 
+//			 if(employee[i]!=null)
+//				 currentEmployees++;	 
+//		}
+//		 return currentEmployees;
 		return numberEmployees;
 	}
 	
@@ -43,17 +51,18 @@ public class Company {
 		seniorEmployeeDate.set(seniorEmployee.getStartDate().getDay(), 
 							seniorEmployee.getStartDate().getMonth(),
 							seniorEmployee.getStartDate().getYear());
-		
+
 		for(int i=0; i< currentNumberEmployees(); i++) {
-			Calendar employeeDate = Calendar.getInstance();
-			employeeDate.set(employee[i].getStartDate().getDay(), 
+			Calendar EmployeeDate = Calendar.getInstance();
+			EmployeeDate.set(employee[i].getStartDate().getDay(), 
 							employee[i].getStartDate().getMonth(),
 							employee[i].getStartDate().getYear() );
-			
-			if(seniorEmployeeDate.after(employeeDate)) {
+
+			if(seniorEmployeeDate.after(EmployeeDate)) {
 				seniorEmployee = employee[i];
-				
 			}
+			
+	
 		}
 		
 		return seniorEmployee;
